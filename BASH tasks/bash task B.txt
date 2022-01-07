@@ -1,0 +1,9 @@
+1. cat apache_log.txt | awk '{ print $1 ; }' | sort | uniq -c | sort -n -r | head -n 1
+2. cat apache_log.txt | awk '{ print $7 ; }' | sort | uniq -c | sort -n -r | head -n 1
+3. cat apache_log.txt | awk '{ print $1 ; }' | sort | uniq -c | sort -n -r 
+4. cat apache_log.txt | awk '{ print $4 ; }' | sort | uniq -c | sort -n | tail
+5. cat apache_log.txt | grep "error404" | awk '{ print $1,$15 ; }' | tr -d '+)"'
+6. cat apache_log.txt | grep "bot"| awk -F '"' '{ print $1,$6 }' | sed -e 's/\[[^][]*\]//g' | awk -F '-' '{ print $1 $3 $4 $5 }' | sort | uniq
+
+
+
